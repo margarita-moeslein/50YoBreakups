@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 
 
 class TwilioBot:
-    def __init__(self, process_callback, poll_interval=5  ):
+    def __init__(self, process_callback, poll_interval=5):
         load_dotenv()
         self.poll_interval = poll_interval
         self.process_callback = process_callback
@@ -37,8 +37,8 @@ class TwilioBot:
 
     def check_new_messages(self):
         conversations = self.service.conversations.list()
-        for convo in conversations:            
-            
+
+        for convo in conversations:
             messages = convo.messages.list()
             for msg in messages:
                 if msg.sid not in self.processed_messages:

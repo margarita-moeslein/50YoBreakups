@@ -43,19 +43,13 @@ def main_callback(bot : TwilioBot, msg_sid):
         open_ai = OpenAILLMClient()
         response = open_ai.call(prompt=ai_prompt)
 
-        # If response is a JSON string, beautify it:
-        try:
-            message_to_send = beautify_json_response(response)
-        except Exception:
-            # If not JSON, just send as is
-            message_to_send = response
+        message_to_send = beautify_json_response(response)
 
     bot.send_message(bot.processed_messages_dict[msg_sid], message_to_send)
     
 
 if __name__ == "__main__":
-    UserPrompts
+    UserPrompts()
 
     bot = TwilioBot(process_callback=main_callback)
     bot.start()
-    #main()
