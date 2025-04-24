@@ -2,6 +2,9 @@ from twilio_api import send_whatsapp_message, fetch_latest_messages
 from twilo_bot import TwilioBot
 from user_prompts import UserPrompts
 from llm import OpenAILLMClient
+from beautify_json import beautify_json_response
+
+
 
 def main():
     message_to_send = "something random"
@@ -39,7 +42,13 @@ def main_callback(bot : TwilioBot, msg_sid):
                                                         KEY3=user_session["prompt_response"][2])
         open_ai = OpenAILLMClient()
         response = open_ai.call(prompt=ai_prompt)
-        message_to_send = response
+
+        # If response is a JSON string, beautify it:
+        try:
+            message_to_send = beautify_json_response(response)
+        except Exception:
+            # If not JSON, just send as is
+            message_to_send = response
 
     bot.send_message(bot.processed_messages_dict[msg_sid], message_to_send)
     
