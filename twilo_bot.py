@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 
 
 class TwilioBot:
-    def __init__(self, process_callback, poll_interval=5,  ):
+    def __init__(self, process_callback, poll_interval=5  ):
         load_dotenv()
         self.poll_interval = poll_interval
         self.process_callback = process_callback
@@ -53,7 +53,7 @@ class TwilioBot:
                     }
                     
                     # Use timezone-aware datetime for now()
-                    thirty_minutes_ago = datetime.now(timezone.utc) - timedelta(minutes=30)
+                    thirty_minutes_ago = datetime.now(timezone.utc) - timedelta(minutes=1)
                     #check the message only form the last 30 minutes
                     if msg.date_created > thirty_minutes_ago:
                         #Trigger the application process     
@@ -83,8 +83,8 @@ class TwilioBot:
         body = processed_message["body"]
         
         
-        if convo.sid in self.responded_conversations:
-            return
+        # if convo.sid in self.responded_conversations:
+        #     return
 
         convo.messages.create(
             author="BreakupGPT",
