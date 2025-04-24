@@ -50,8 +50,8 @@ class OpenAILLMClient:
 #             The response must always be a json format { "serious_ideas": "Her mention all the possible remedies",
 #             "serious_ideas_song" : "Here a serious song about breakup", "funny_ideas": "Here mention funny ideas",
 #             "funny_ideas_song" : "Here a funny song about breakup",
-#             "wired_ideas": "Here mention wired ideas","song_idea" : "give us a funny song for this scenario",
-#             "wired_ideas_song" : "Here a wired song about breakup",}
+#             "weird_ideas": "Here mention weird ideas","song_idea" : "give us a funny song for this scenario",
+#             "weird_ideas_song" : "Here a weird song about breakup",}
 #             """
 #     response = client.call(prompt, system_prompt)
 #     print(response)

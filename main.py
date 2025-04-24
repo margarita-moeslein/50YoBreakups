@@ -4,13 +4,12 @@ from user_prompts import UserPrompts
 from llm import OpenAILLMClient
 
 def main():
-    #message_to_send = input("Enter message to send via WhatsApp: ")
     message_to_send = "something random"
     send_whatsapp_message(message_to_send)
     fetch_latest_messages()
 
 user_something = {}
-#user_something[msg_sid] = {"prompt_count": 0 , "prompt_rseponse": []}
+#user_something[msg_sid] = {"prompt_count": 0 , "prompt_response": []}
 
 def main_callback(bot : TwilioBot, msg_sid):
     print(f"[MAIN] Processing message {msg_sid}")
@@ -42,27 +41,12 @@ def main_callback(bot : TwilioBot, msg_sid):
         response = open_ai.call(prompt=ai_prompt)
         message_to_send = response
 
-    # here define logic layer
-    # here define OpenAI Layer ---> json respone
-    # define ethical layer
-    #message_to_send = "our response"
     bot.send_message(bot.processed_messages_dict[msg_sid], message_to_send)
     
-    
-    
-if __name__ == "__main__":
-    # get_message() ---> Message from user
-    # here define logic layer
-    # here define OpenAI Layer ---> json respone
-    # define ethical layer
-    # send_message() ----> Message to user
-    UserPrompts
 
+if __name__ == "__main__":
+    UserPrompts
 
     bot = TwilioBot(process_callback=main_callback)
     bot.start()
-    
-    
-    
-    
     #main()
