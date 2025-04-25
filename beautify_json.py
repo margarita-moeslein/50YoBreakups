@@ -18,4 +18,4 @@ json_str = '''{
   "wired_ideas_song": "We Are Never Ever Getting Back Together by Taylor Swift ..."
 }'''
 
-print(beautify_json_response(json_str))
+#print(beautify_json_response(json_str))

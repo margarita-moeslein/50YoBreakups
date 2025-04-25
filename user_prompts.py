@@ -8,7 +8,7 @@ class UserPrompts:
         "How would you like me to help you (e.g., 'Funny', 'Savage', 'Kind', 'Song lyric style')?"
     ]
 
-    print(user_prompts)
+    #print(user_prompts)
 
     
     USER_AI_PROMPT = """
@@ -20,4 +20,4 @@ class UserPrompts:
       One song should fit the lyrics, and one song should fit the tone of my entries.
     """
 
-    print(USER_AI_PROMPT)
+   #print(USER_AI_PROMPT)

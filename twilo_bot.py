@@ -81,8 +81,7 @@ class TwilioBot:
         convo = processed_message["conversation"]
         author = processed_message["author"]
         body = processed_message["body"]
-        
-        
+                
         # if convo.sid in self.responded_conversations:
         #     return
 
@@ -90,7 +89,7 @@ class TwilioBot:
             author="BreakupGPT",
             body= message_to_send
         )
-        print(f"[AUTO-REPLY] Sent to conversation {convo.sid}")
+        print(f"Sent to conversation {convo.sid}")
         self.responded_conversations.add(convo.sid)
 
     def start(self):
