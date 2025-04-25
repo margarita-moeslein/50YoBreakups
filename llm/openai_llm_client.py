@@ -21,7 +21,6 @@ class OpenAILLMClient:
       "funny_ideas": "Here mention funny ideas",
       "funny_ideas_song": "Here is a funny song about breakups",
       "weird_ideas": "Here mention weird ideas",
-      "song_idea": "Give us a funny song for this scenario",
       "weird_ideas_song": "Here is a weird song about breakups"
     }
     """
