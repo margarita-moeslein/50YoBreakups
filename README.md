@@ -42,7 +42,6 @@ Because not every goodbye has to be awkward. Sometimes it just has to be hilario
 
 - 🧠 OpenAI GPT (via `openai` Python SDK)
 - 💬 Twilio Conversations API (WhatsApp support)
-- 🎨 Imgflip API (for memes)
 - 🐍 Python (polling-based backend, no Flask)
 - 🔊 Optional: song snippets via YouTube or static links
 
