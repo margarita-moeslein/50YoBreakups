@@ -1,6 +1,7 @@
 from openai import OpenAI
 import os
 
+
 class OpenAILLMClient:
     """Client for OpenAI LLM"""
     GPT_4 = "gpt-4"
@@ -25,7 +26,28 @@ class OpenAILLMClient:
     }
     """
 
-    def __init__(self, model = GPT_4_O, max_tokens: int = 3000, temperature: float = 0.3):
+    compliance_prompt = """You are an expert in European digital content regulations, 
+    including the Digital Services Act (DSA), GDPR, and UI/UX ethical guidelines under the EU's Human-Centric AI framework. 
+    Your job is to audit all generated content for compliance.
+        You must check for:
+        - Emotional manipulation, especially in vulnerable topics like relationships or mental health.
+        - Stereotyping, gender bias, or discriminatory humor (even if subtle or culturally 'funny').
+        - Inappropriate or unprofessional tone in UI or digital advice.
+        - Data privacy risks if content encourages sharing personal info.
+        - Accessibility or inclusiveness violations (language clarity, emotional safety).
+        - Suggestive or misleading content that might influence users unfairly (dark patterns or psychological nudging).
+        Be specific. No vagueness. Aim for digital dignity, user trust, and lawful creativity.
+        The response must always be in JSON format:
+        {
+          "risky": "What parts are risky",
+          "violation": " Which EU rules or ethics it may violate",
+          "cleaned": "rephrase the content so that it will be full compliant with paragraph 
+          sections serious_ideas,serious_ideas_song,
+          funny_ideas,funny_ideas_song,weird_ideas,weird_ideas_song"
+        }           
+       """
+
+    def __init__(self, model=GPT_4_O, max_tokens: int = 3000, temperature: float = 0.3):
         self.model = model
         self.max_tokens = max_tokens
         self.temperature = temperature
@@ -61,4 +83,3 @@ class OpenAILLMClient:
 #             """
 #     response = client.call(prompt, system_prompt)
 #     print(response)
-
