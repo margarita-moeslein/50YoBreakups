@@ -13,9 +13,8 @@ json_str = '''{
   "serious_ideas_song": "The Night We Met by Lord Huron ...",
   "funny_ideas": "Hey Bert, remember that time ...",
   "funny_ideas_song": "I Will Survive by Gloria Gaynor ...",
-  "wired_ideas": "How about we both take a spontaneous trip ...",
-  "song_idea": "Breakup Song by Frances ...",
-  "wired_ideas_song": "We Are Never Ever Getting Back Together by Taylor Swift ..."
+  "weird_ideas": "How about we both take a spontaneous trip ...",
+  "weird_ideas_song": "We Are Never Ever Getting Back Together by Taylor Swift ..."
 }'''
 
 print(beautify_json_response(json_str))
